@@ -4,7 +4,7 @@ import styles from "./styles/styles.css";
 
 function App() {
   return (
-    <div className="App" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className="App">
       <section className="title-section">
         <div className="title">
           <h1
