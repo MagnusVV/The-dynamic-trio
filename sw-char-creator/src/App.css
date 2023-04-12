@@ -11,3 +11,11 @@
   height: 100vh;
   width: 100vw;
 }
+
+.font-face-am {
+  font-family: "anakinmono";
+}
+
+.font-face-sfdg {
+  font-family: "SF Distant Galaxy";
+}
