@@ -7,6 +7,7 @@ import styles from "./styles/styles.css";
 
 const App = () => {
   //API-testing --->
+
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     fetch("https://swapi.dev/api/planets")
