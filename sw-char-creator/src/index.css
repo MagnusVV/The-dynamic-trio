@@ -10,7 +10,7 @@
 
 html {
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body {
@@ -27,7 +27,7 @@ body {
   width: 100vw;
   margin: 0 auto;
   /* Removing the "bounce effect" during scrolling.*/
-  height: 100vh;
+  height: 100%;
   overflow: auto;
 }
 
