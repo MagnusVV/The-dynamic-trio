@@ -1,10 +1,27 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import "./App.css";
+import { useEffect } from "react";
 import ScrollBtn from "./components/Button";
 import backgroundImage from "./images/background-image.png";
 import styles from "./styles/styles.css";
 
-function App() {
+const App = () => {
+  //API-testing --->
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetch("https://swapi.dev/api/planets")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setPosts(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
+
+  //<--- ---|
+
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
 
@@ -39,6 +56,6 @@ function App() {
       </section>
     </div>
   );
-}
+};
 
 export default App;
