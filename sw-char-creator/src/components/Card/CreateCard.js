@@ -8,6 +8,8 @@ const CreateCard = styled.div`
   background-color: cadetblue;
   display: flex;
   flex-direction: column;
+  grid-column: 1/2;
+  grid-row: 1/2;
 `;
 
 export default CreateCard;
