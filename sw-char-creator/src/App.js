@@ -3,7 +3,8 @@ import "./App.css";
 import Button from "./components/Button/button";
 import backgroundImage from "./images/background-image.png";
 import styles from "./styles/styles.css";
-import CardContainer from "./components/Card-container/Card";
+import CardContainer from "./components/Card-container/CardContainer";
+import Input from "./components/Input/Input";
 
 function App() {
   // const ref = useRef(null);
@@ -35,7 +36,13 @@ function App() {
       </section>
 
       <section className="card-section">
-        <CardContainer />
+        <CardContainer>
+          <div style={{ backgroundColor: "#FF5733" }}>
+            <h1>Hello World</h1>
+          </div>
+          <Button name="Does this work" />
+          <Input placeholder="Your name" />
+        </CardContainer>
       </section>
     </div>
   );
