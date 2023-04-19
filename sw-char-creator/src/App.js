@@ -1,28 +1,11 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import "./App.css";
-import { useEffect } from "react";
-import Button from "./components/Button/Button";
+import Button from "./components/Button/button";
 import backgroundImage from "./images/background-image.png";
 import styles from "./styles/styles.css";
+import CardContainer from "./components/Card-container/Card";
 
-const App = () => {
-  //API-testing --->
-
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    fetch("https://swapi.dev/api/planets")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setPosts(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-
-  //<--- ---|
-
+function App() {
   // const ref = useRef(null);
   // const [height, setHeight] = useState(0);
 
@@ -52,10 +35,10 @@ const App = () => {
       </section>
 
       <section className="card-section">
-        <h1>hello world</h1>
+        <CardContainer />
       </section>
     </div>
   );
-};
+}
 
 export default App;
