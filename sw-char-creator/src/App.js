@@ -1,6 +1,7 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import "./App.css";
-import Button from "./components/Button/button";
+import Button from "./components/Button/Button";
+import DropDown from "./components/DropDown/DropDown";
 import backgroundImage from "./images/background-image.png";
 import styles from "./styles/styles.css";
 import CardContainer from "./components/Card-container/CardContainer";
@@ -42,6 +43,7 @@ function App() {
           </div>
           <CreateCard>
             <Input placeholder="Your name" />
+            <DropDown></DropDown>
           </CreateCard>
         </CardContainer>
       </section>
