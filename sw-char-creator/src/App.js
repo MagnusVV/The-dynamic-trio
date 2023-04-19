@@ -1,5 +1,6 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import "./App.css";
+<<<<<<< Updated upstream
 import { useEffect } from "react";
 import ScrollBtn from "./components/Button";
 import backgroundImage from "./images/background-image.png";
@@ -25,21 +26,30 @@ const App = () => {
 
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
+=======
+import Button from "./components/Button/button";
+import backgroundImage from "./images/background-image.png";
+import styles from "./styles/styles.css";
+
+function App() {
+  // const ref = useRef(null);
+  // const [height, setHeight] = useState(0);
+>>>>>>> Stashed changes
 
   //finds out the height of the element
-  useLayoutEffect(() => {
-    setHeight(ref.current.offsetHeight);
-  }, []);
+  // useLayoutEffect(() => {
+  //   setHeight(ref.current.offsetHeight);
+  // }, []);
   // Scrolls down the height of the first section
-  const scrollDown = () => {
-    window.scrollTo({ top: height, behavior: "smooth" });
-    console.log("hello world");
-  };
+  // const scrollDown = () => {
+  //   window.scrollTo({ top: height, behavior: "smooth" });
+  //   console.log("hello world");
+  // };
 
   return (
     <div className="App">
       {/* gets the height of the section element */}
-      <section ref={ref} className="title-section">
+      <section className="title-section">
         <div className="title">
           <h1
             className="font-face-sfdg"
@@ -48,8 +58,7 @@ const App = () => {
             Star Wars Character Generator
           </h1>
         </div>
-        {/* <ScrollBtn onClick={scrollDown} /> */}
-        <button onClick={scrollDown}>Click me</button>
+        <Button name="Get started" />
       </section>
 
       <section className="card-section">
