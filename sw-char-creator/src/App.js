@@ -5,6 +5,7 @@ import backgroundImage from "./images/background-image.png";
 import styles from "./styles/styles.css";
 import CardContainer from "./components/Card-container/CardContainer";
 import Input from "./components/Input/Input";
+import CreateCard from "./components/Card/CreateCard";
 
 function App() {
   // const ref = useRef(null);
@@ -22,7 +23,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* gets the height of the section element */}
       <section className="title-section">
         <div className="title">
           <h1
@@ -40,8 +40,9 @@ function App() {
           <div style={{ backgroundColor: "#FF5733" }}>
             <h1>Hello World</h1>
           </div>
-          <Button name="Does this work" />
-          <Input placeholder="Your name" />
+          <CreateCard>
+            <Input placeholder="Your name" />
+          </CreateCard>
         </CardContainer>
       </section>
     </div>
