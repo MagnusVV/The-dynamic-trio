@@ -1,8 +1,7 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import "./App.css";
-<<<<<<< Updated upstream
 import { useEffect } from "react";
-import ScrollBtn from "./components/Button";
+import Button from "./components/Button/Button";
 import backgroundImage from "./images/background-image.png";
 import styles from "./styles/styles.css";
 
@@ -24,17 +23,8 @@ const App = () => {
 
   //<--- ---|
 
-  const ref = useRef(null);
-  const [height, setHeight] = useState(0);
-=======
-import Button from "./components/Button/button";
-import backgroundImage from "./images/background-image.png";
-import styles from "./styles/styles.css";
-
-function App() {
   // const ref = useRef(null);
   // const [height, setHeight] = useState(0);
->>>>>>> Stashed changes
 
   //finds out the height of the element
   // useLayoutEffect(() => {
@@ -62,7 +52,7 @@ function App() {
       </section>
 
       <section className="card-section">
-        <h2>hello world</h2>
+        <h1>hello world</h1>
       </section>
     </div>
   );
