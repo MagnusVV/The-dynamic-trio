@@ -64,6 +64,12 @@ function App() {
               options={options}
             />
             <DropDownApiValues label="Species: " endPoint="species/" />
+            <DropDownApiValues label="Homeworld: " endPoint="planets/" />
+            <DropDownApiValues label="Age: " endPoint="people/" />
+            <DropDownApiValues label="Eye color: " endPoint="people/" />
+            <DropDownApiValues label="Skin color: " endPoint="people/" />
+            <DropDownApiValues label="Hair color: " endPoint="people/" />
+            <DropDownApiValues label="Vehicle: " endPoint="vehicles/" />
           </CreateCard>
         </CardContainer>
       </section>
