@@ -16,7 +16,7 @@ const DropDownApiValues = ({ label, endPoint }) => {
         console.log(err.message);
       });
   }, [endPoint]);
-  ç;
+
   const [choiceValue, setChoiceValue] = useState("");
 
   const handleChange = (event) => {
