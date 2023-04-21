@@ -8,6 +8,7 @@ import styles from "./styles/styles.css";
 import CardContainer from "./components/Card-container/CardContainer";
 import Input from "./components/Input/Input";
 import CreateCard from "./components/Card/CreateCard";
+import CharacterCard from "./components/CharacterCard/CharacterCard";
 
 function App() {
   // These variables are for the dropdown menu(s) --->
@@ -20,6 +21,12 @@ function App() {
 
   const handleChange = (event) => {
     setChoiceValue(event.target.value);
+  };
+
+  const [characterCard, setCharacterCard] = useState(["sample component"]);
+
+  const createCharacter = () => {
+    setCharacterCard([...characterCard, "sample component"]);
   };
   // <--- --- ---|
 
@@ -52,9 +59,6 @@ function App() {
 
       <section className="card-section">
         <CardContainer>
-          <div style={{ backgroundColor: "#FF5733" }}>
-            <h1>Hello World</h1>
-          </div>
           <CreateCard>
             <Input placeholder="Your name" />
             <DropDown
@@ -70,7 +74,12 @@ function App() {
             <DropDownApiValues label="Skin color: " endPoint="people/" />
             <DropDownApiValues label="Hair color: " endPoint="people/" />
             <DropDownApiValues label="Vehicle: " endPoint="vehicles/" />
+            <Button onClick={createCharacter} name="create character" />
           </CreateCard>
+
+          {characterCard.map((item, i) => (
+            <CharacterCard />
+          ))}
         </CardContainer>
       </section>
     </div>
