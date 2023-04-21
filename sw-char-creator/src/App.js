@@ -23,7 +23,7 @@ function App() {
     setChoiceValue(event.target.value);
   };
 
-  const [characterCard, setCharacterCard] = useState(["sample component"]);
+  const [characterCard, setCharacterCard] = useState([]);
 
   const createCharacter = () => {
     setCharacterCard([...characterCard, "sample component"]);
@@ -77,7 +77,7 @@ function App() {
             <Button onClick={createCharacter} name="create character" />
           </CreateCard>
 
-          {characterCard.map((item, i) => (
+          {characterCard.map((item) => (
             <CharacterCard />
           ))}
         </CardContainer>
