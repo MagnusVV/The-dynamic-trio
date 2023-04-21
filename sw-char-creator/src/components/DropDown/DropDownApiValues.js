@@ -17,7 +17,7 @@ const DropDownApiValues = ({ label, endPoint }) => {
       });
   }, [endPoint]);
 
-  const [choiceValue, setChoiceValue] = useState("");
+  const [choiceValue, setChoiceValue] = useState("Human");
 
   const handleChange = (event) => {
     setChoiceValue(event.target.value);
