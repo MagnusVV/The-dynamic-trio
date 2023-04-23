@@ -3,7 +3,6 @@ import "./App.css";
 import Button from "./components/Button/Button";
 import DropDown from "./components/DropDown/DropDown";
 import DropDownApiValues from "./components/DropDown/DropDownApiValues";
-import backgroundImage from "./images/background-image.png";
 import styles from "./styles/styles.css";
 import CardContainer from "./components/Card-container/CardContainer";
 import Input from "./components/Input/Input";
