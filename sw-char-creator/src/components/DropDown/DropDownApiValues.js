@@ -6,6 +6,7 @@ const DropDownApiValues = ({ label, endPoint }) => {
 
   // The result of the API-call will be stored here:
   const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     fetch(rootUrl + endPoint)
       .then((response) => response.json())
@@ -17,7 +18,7 @@ const DropDownApiValues = ({ label, endPoint }) => {
       });
   }, [endPoint]);
 
-  const [choiceValue, setChoiceValue] = useState("Human");
+  const [choiceValue, setChoiceValue] = useState("");
 
   const handleChange = (event) => {
     setChoiceValue(event.target.value);

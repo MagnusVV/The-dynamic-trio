@@ -12,23 +12,24 @@ import CharacterCard from "./components/CharacterCard/CharacterCard";
 
 function App() {
   // These variables are for the dropdown menu(s) --->
-  const options = [
+  const orderOptions = [
     { label: "Jedi", value: "jedi" },
     { label: "Sith", value: "sith" },
   ];
 
-  const [choiceValue, setChoiceValue] = useState(options[0].value);
+  const [choiceValue, setChoiceValue] = useState(orderOptions[0].value);
 
   const handleChange = (event) => {
     setChoiceValue(event.target.value);
   };
+
+  // <--- --- ---|
 
   const [characterCard, setCharacterCard] = useState([]);
 
   const createCharacter = () => {
     setCharacterCard([...characterCard, "sample component"]);
   };
-  // <--- --- ---|
 
   // const ref = useRef(null);
   // const [height, setHeight] = useState(0);
@@ -65,7 +66,7 @@ function App() {
               label="Order: "
               value={choiceValue}
               onChange={handleChange}
-              options={options}
+              options={orderOptions}
             />
             <DropDownApiValues label="Species: " endPoint="species/" />
             <DropDownApiValues label="Homeworld: " endPoint="planets/" />
