@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
@@ -7,8 +6,7 @@ const CardContainer = styled.div`
   height: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 5px;
+  gap: 1rem;
   padding: 1rem;
 `;
 
