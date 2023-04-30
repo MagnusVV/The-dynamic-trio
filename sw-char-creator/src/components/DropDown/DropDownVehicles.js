@@ -1,8 +1,11 @@
 import "./DropDown.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const DropDown = ({ label, options, optionValue, optionLabel }) => {
-  const [choiceValue, setChoiceValue] = useState(options[0].value);
+  const [choiceValue, setChoiceValue] = useState();
+
+  // Had a hard time getting initial choiceValue to work, but this solved. Quite many re-renders on initialisation, though.
+  useEffect(() => setChoiceValue(options?.[0]?.name), [options]);
 
   const handleChange = (event) => {
     setChoiceValue(event.target.value);
