@@ -9,7 +9,9 @@ import CardContainer from "./components/Card-container/CardContainer";
 import Input from "./components/Input/Input";
 import CreateCard from "./components/Card/CreateCard";
 import CharacterCard from "./components/CharacterCard/CharacterCard";
+import { v4 as uuidv4 } from "uuid";
 import FetchFromSwapi from "./functions/FetchFromSwapi";
+
 
 function App() {
   // These variables are for the dropdown menu(s) --->
@@ -90,10 +92,25 @@ function App() {
 
   // This section is for Card properties and variables --- --->
 
-  const [characterCard, setCharacterCard] = useState([]);
+  const [characterCards, setCharacterCards] = useState([]);
 
-  const createCharacter = () => {
-    setCharacterCard([...characterCard, "sample component"]);
+  const createCharacter = (id) => {
+    const newCard = { id: id };
+
+    setCharacterCards([...characterCards, newCard]);
+  };
+
+  const handleDelete = (id) => {
+    // loops through characterCards and creates a copy if the id match up
+    characterCards.forEach((characterCard, index) => {
+      if (characterCard.id === id) {
+        const copy = [...characterCards];
+        // removes one card
+        copy.splice(index, 1);
+        //update the useState
+        setCharacterCards(copy);
+      }
+    });
   };
 
   // <--- ---|
@@ -128,6 +145,9 @@ function App() {
               optionValue={"name"}
               optionLabel={"name"}
             />
+
+
+
             <DropDownVehicles
               label="Vehicles: "
               options={allVehicles}
@@ -135,12 +155,27 @@ function App() {
               optionLabel={"name"}
             />
 
-            <Button onClick={createCharacter} name="create character" />
+                        <Button
+              onClick={() => {
+                //generates a random id (NPM package)
+                const id = uuidv4();
+                createCharacter(id);
+              }}
+              name="create character"
+            />
           </CreateCard>
 
-          {characterCard.map((item) => (
-            <CharacterCard />
-          ))}
+          {characterCards.map((characterCard) => {
+            return (
+              <CharacterCard key={characterCard.id} id={characterCard.id}>
+                <Button
+                  name="Delete"
+                  onClick={() => handleDelete(characterCard.id)}
+                />
+                {characterCard.id}
+              </CharacterCard>
+            );
+          })}
         </CardContainer>
       </section>
     </div>
