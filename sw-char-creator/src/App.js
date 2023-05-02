@@ -190,14 +190,16 @@ function App() {
           {characterCards.map((characterCard, index) => {
             return (
               <CharacterCard key={characterCard.id} id={characterCard.id}>
+                {/* Will keep this in case of error-handling */}
+                {/* <p>{characterCard.id}</p> */}
+                {characterInfo[index]?.map((info) => {
+                  // Every mapped post gets a unique id.
+                  return <p key={uuidv4()}>{info[1]}</p>;
+                })}
                 <Button
                   name="Delete"
                   onClick={() => handleDelete(characterCard.id)}
                 />
-                <p>{characterCard.id}</p>
-                {characterInfo[index]?.map((info) => {
-                  return <p key={uuidv4()}>{info[1]}</p>;
-                })}
               </CharacterCard>
             );
           })}
