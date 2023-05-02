@@ -157,7 +157,11 @@ function App() {
         <CardContainer>
           <CreateCard>
             {/* Added form for data handling */}
-            <form method="post" onSubmit={handleSubmit}>
+            <form
+              className="create-card-form"
+              method="post"
+              onSubmit={handleSubmit}
+            >
               <Input name="name" placeholder="Name" />
               <DropDown
                 label="Order: "
