@@ -140,12 +140,17 @@ function App() {
         <div className="title">
           <h1
             className="font-face-sfdg"
-            style={{ color: "yellow", fontSize: "100px", textAlign: "center" }}
+            style={{
+              color: "yellow",
+              fontSize: "100px",
+              textAlign: "center",
+              webkitTextFillColor: "black",
+              webkitTextStroke: "1px yellow",
+            }}
           >
             Star Wars Character Generator
           </h1>
         </div>
-        <Button name="Get started" />
       </section>
 
       <section className="card-section">
@@ -188,8 +193,19 @@ function App() {
           </CreateCard>
 
           {characterCards.map((characterCard, index) => {
+            let order = true;
+
+            characterInfo[index]?.forEach((info) => {
+              if (info[1] === "Sith") {
+                order = false;
+              }
+            });
             return (
-              <CharacterCard key={characterCard.id} id={characterCard.id}>
+              <CharacterCard
+                key={characterCard.id}
+                id={characterCard.id}
+                jedi={order}
+              >
                 {/* Will keep this in case of error-handling */}
                 {/* <p>{characterCard.id}</p> */}
                 {characterInfo[index]?.map((info) => {
