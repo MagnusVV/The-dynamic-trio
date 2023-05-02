@@ -1,7 +1,7 @@
 import "./DropDown.css";
 import { useState, useEffect } from "react";
 
-const DropDown = ({ label, speciesChoosen, options, optionValue }) => {
+const DropDown = ({ name, label, speciesChoosen, options, optionValue }) => {
   // Checks for the species-object with same "name"-property as speciesChoosen:
   const foundSpeciesObject = options.find(
     (speciesObject) => speciesObject.name === speciesChoosen
@@ -23,7 +23,7 @@ const DropDown = ({ label, speciesChoosen, options, optionValue }) => {
     <div>
       <label>
         {label}
-        <select value={choiceValue} onChange={handleChange}>
+        <select name={name} value={choiceValue} onChange={handleChange}>
           {foundSpeciesObject?.[optionValue].split(",").map((option, index) => (
             <option value={option} label={option} key={index}></option>
           ))}
