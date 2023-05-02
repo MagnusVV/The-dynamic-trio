@@ -102,18 +102,17 @@ function App() {
   // <--- ---|
 
   // -------------------------------------
-  // HARD TESTING!
+
   const [characterInfo, setCharacterInfo] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     // https://react.dev/reference/react-dom/components/select#caveats
     const form = event.target;
     const formData = new FormData(form);
 
-    // console.log([...formData.entries()]);
     setCharacterInfo((current) => [...current, [...formData.entries()]]);
-    // console.log(characterInfo);
 
     event.target.reset();
   };
@@ -151,7 +150,7 @@ function App() {
       <section className="card-section">
         <CardContainer>
           <CreateCard>
-            {/* Hard testing!!! */}
+            {/* Added form for data handling */}
             <form method="post" onSubmit={handleSubmit}>
               <Input name="name" placeholder="Name" />
               <DropDown
@@ -176,6 +175,7 @@ function App() {
                 optionLabel={"name"}
               />
               <Button
+                type="submit"
                 onClick={() => {
                   //generates a random id (NPM package)
                   const id = uuidv4();
@@ -194,9 +194,12 @@ function App() {
                   onClick={() => handleDelete(characterCard.id)}
                 />
                 <p>{characterCard.id}</p>
-                <p>{characterInfo[index]?.[0][1]}</p>
+                {characterInfo[index]?.map((info) => {
+                  return <p>{info[1]}</p>;
+                })}
+                {/* <p>{characterInfo[index]?.[0][1]}</p>
                 <p>{characterInfo[index]?.[1][1]}</p>
-                <p>{characterInfo[index]?.[2][1]}</p>
+                <p>{characterInfo[index]?.[2][1]}</p> */}
               </CharacterCard>
             );
           })}
