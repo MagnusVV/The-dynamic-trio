@@ -124,6 +124,7 @@ function App() {
         const copy = [...characterCards];
         // removes one card
         copy.splice(index, 1);
+        // Removes the correspondent info-array in characterInfo.
         characterInfo.splice(index, 1);
         //update the useState
         setCharacterCards(copy);
@@ -195,11 +196,8 @@ function App() {
                 />
                 <p>{characterCard.id}</p>
                 {characterInfo[index]?.map((info) => {
-                  return <p>{info[1]}</p>;
+                  return <p key={uuidv4()}>{info[1]}</p>;
                 })}
-                {/* <p>{characterInfo[index]?.[0][1]}</p>
-                <p>{characterInfo[index]?.[1][1]}</p>
-                <p>{characterInfo[index]?.[2][1]}</p> */}
               </CharacterCard>
             );
           })}
