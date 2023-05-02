@@ -194,7 +194,15 @@ function App() {
                 {/* <p>{characterCard.id}</p> */}
                 {characterInfo[index]?.map((info) => {
                   // Every mapped post gets a unique id.
-                  return <p key={uuidv4()}>{info[1]}</p>;
+                  return (
+                    <p key={uuidv4()}>
+                      {info[0].charAt(0).toUpperCase() +
+                        info[0].slice(1).toLowerCase() +
+                        ": " +
+                        info[1].charAt(0).toUpperCase() +
+                        info[1].slice(1).toLowerCase()}
+                    </p>
+                  );
                 })}
                 <Button
                   name="Delete"

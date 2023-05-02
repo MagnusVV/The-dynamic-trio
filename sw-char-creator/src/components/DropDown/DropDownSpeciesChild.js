@@ -29,8 +29,6 @@ const DropDown = ({ name, label, speciesChoosen, options, optionValue }) => {
           ))}
         </select>
       </label>
-
-      <p>Choosen: {choiceValue}</p>
     </div>
   );
 };

@@ -10,9 +10,8 @@ const CreateCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  grid-column: 1/2;
-  grid-row: 1/2;
+  gap: 1rem;
+  grid-column: 1 / span 3;
 `;
 
 export default CreateCard;

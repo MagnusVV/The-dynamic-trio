@@ -27,8 +27,6 @@ const DropDown = ({ name, label, options, optionValue, optionLabel }) => {
         </select>
       </label>
 
-      <p>Choosen: {choiceValue}</p>
-
       <DropDownSpeciesChild
         label={"Eye color: "}
         name="eyeColor"
