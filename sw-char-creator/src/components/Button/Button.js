@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = (props) => {
   return (
-    <button onClick={props.onClick} className="scroll-btn">
+    <button type="submit" onClick={props.onClick} className="scroll-btn">
       {props.name}
     </button>
   );

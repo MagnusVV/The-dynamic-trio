@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  background-color: aqua;
+  background-color: rgba(0, 0, 0, 0.6);
   width: auto;
   height: auto;
   display: grid;

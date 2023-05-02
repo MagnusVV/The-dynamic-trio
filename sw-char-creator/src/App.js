@@ -1,17 +1,16 @@
 import { useState } from "react";
 import "./App.css";
+import CardContainer from "./components/Card-container/CardContainer";
+import CreateCard from "./components/Card/CreateCard";
 import Button from "./components/Button/Button";
+import Input from "./components/Input/Input";
 import DropDown from "./components/DropDown/Dropdown";
 import DropDownSpecies from "./components/DropDown/DropDownSpecies";
 import DropDownVehicles from "./components/DropDown/DropDownVehicles";
 import styles from "./styles/styles.css";
-import CardContainer from "./components/Card-container/CardContainer";
-import Input from "./components/Input/Input";
-import CreateCard from "./components/Card/CreateCard";
 import CharacterCard from "./components/CharacterCard/CharacterCard";
 import { v4 as uuidv4 } from "uuid";
 import FetchFromSwapi from "./functions/FetchFromSwapi";
-
 
 function App() {
   // These variables are for the dropdown menu(s) --->
@@ -100,6 +99,25 @@ function App() {
     setCharacterCards([...characterCards, newCard]);
   };
 
+  // <--- ---|
+
+  // -------------------------------------
+  // HARD TESTING!
+  const [characterInfo, setCharacterInfo] = useState([]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // https://react.dev/reference/react-dom/components/select#caveats
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // console.log([...formData.entries()]);
+    setCharacterInfo((current) => [...current, [...formData.entries()]]);
+    // console.log(characterInfo);
+
+    event.target.reset();
+  };
+  // -------------------------------------
   const handleDelete = (id) => {
     // loops through characterCards and creates a copy if the id match up
     characterCards.forEach((characterCard, index) => {
@@ -107,13 +125,14 @@ function App() {
         const copy = [...characterCards];
         // removes one card
         copy.splice(index, 1);
+        characterInfo.splice(index, 1);
         //update the useState
         setCharacterCards(copy);
       }
     });
   };
 
-  // <--- ---|
+  // <--- --- --- ---|
 
   return (
     <div className="App">
@@ -132,47 +151,52 @@ function App() {
       <section className="card-section">
         <CardContainer>
           <CreateCard>
-            <Input placeholder="Your name" />
-            <DropDown
-              label="Order: "
-              options={orderOptions}
-              optionValue={"value"}
-              optionLabel={"label"}
-            />
-            <DropDownSpecies
-              label="Species: "
-              options={allSpecies}
-              optionValue={"name"}
-              optionLabel={"name"}
-            />
-
-
-
-            <DropDownVehicles
-              label="Vehicles: "
-              options={allVehicles}
-              optionValue={"name"}
-              optionLabel={"name"}
-            />
-
-                        <Button
-              onClick={() => {
-                //generates a random id (NPM package)
-                const id = uuidv4();
-                createCharacter(id);
-              }}
-              name="create character"
-            />
+            {/* Hard testing!!! */}
+            <form method="post" onSubmit={handleSubmit}>
+              <Input name="name" placeholder="Name" />
+              <DropDown
+                label="Order: "
+                name="order"
+                options={orderOptions}
+                optionValue={"value"}
+                optionLabel={"label"}
+              />
+              <DropDownSpecies
+                label="Species: "
+                name="species"
+                options={allSpecies}
+                optionValue={"name"}
+                optionLabel={"name"}
+              />
+              <DropDownVehicles
+                label="Vehicle: "
+                name="vehicle"
+                options={allVehicles}
+                optionValue={"name"}
+                optionLabel={"name"}
+              />
+              <Button
+                onClick={() => {
+                  //generates a random id (NPM package)
+                  const id = uuidv4();
+                  createCharacter(id);
+                }}
+                name="Create character"
+              />
+            </form>
           </CreateCard>
 
-          {characterCards.map((characterCard) => {
+          {characterCards.map((characterCard, index) => {
             return (
               <CharacterCard key={characterCard.id} id={characterCard.id}>
                 <Button
                   name="Delete"
                   onClick={() => handleDelete(characterCard.id)}
                 />
-                {characterCard.id}
+                <p>{characterCard.id}</p>
+                <p>{characterInfo[index]?.[0][1]}</p>
+                <p>{characterInfo[index]?.[1][1]}</p>
+                <p>{characterInfo[index]?.[2][1]}</p>
               </CharacterCard>
             );
           })}
