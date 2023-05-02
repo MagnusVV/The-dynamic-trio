@@ -99,19 +99,6 @@ function App() {
     setCharacterCards([...characterCards, newCard]);
   };
 
-  const handleDelete = (id) => {
-    // loops through characterCards and creates a copy if the id match up
-    characterCards.forEach((characterCard, index) => {
-      if (characterCard.id === id) {
-        const copy = [...characterCards];
-        // removes one card
-        copy.splice(index, 1);
-        //update the useState
-        setCharacterCards(copy);
-      }
-    });
-  };
-
   // <--- ---|
 
   // -------------------------------------
@@ -131,6 +118,21 @@ function App() {
     event.target.reset();
   };
   // -------------------------------------
+  const handleDelete = (id) => {
+    // loops through characterCards and creates a copy if the id match up
+    characterCards.forEach((characterCard, index) => {
+      if (characterCard.id === id) {
+        const copy = [...characterCards];
+        // removes one card
+        copy.splice(index, 1);
+        characterInfo.splice(index, 1);
+        //update the useState
+        setCharacterCards(copy);
+      }
+    });
+  };
+
+  // <--- --- --- ---|
 
   return (
     <div className="App">
