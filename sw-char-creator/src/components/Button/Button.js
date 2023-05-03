@@ -19,7 +19,7 @@ const ButtonStyled = styled.button`
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: #2ff924;
+    background-color: ${(props) => (props.create ? "#2ff924" : "#EB212E")};
     transform-origin: bottom left;
     transition: transform 0.25s ease-out;
   }
@@ -37,7 +37,11 @@ const ButtonStyled = styled.button`
 
 const Button = (props) => {
   return (
-    <ButtonStyled type={props.type} onClick={props.onClick}>
+    <ButtonStyled
+      type={props.type}
+      create={props.create}
+      onClick={props.onClick}
+    >
       {props.name}
     </ButtonStyled>
   );

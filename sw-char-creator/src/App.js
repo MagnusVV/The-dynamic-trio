@@ -186,6 +186,7 @@ function App() {
               />
               <Button
                 type="submit"
+                create={true}
                 onClick={() => {
                   //generates a random id (NPM package)
                   const id = uuidv4();
@@ -227,6 +228,7 @@ function App() {
                 <Button
                   name="Delete"
                   onClick={() => handleDelete(characterCard.id)}
+                  create={false}
                 />
               </CharacterCard>
             );
