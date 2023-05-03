@@ -1,4 +1,3 @@
-import "./DropDown.css";
 import { useState } from "react";
 
 const DropDown = ({ name, label, options, optionValue, optionLabel }) => {

@@ -1,4 +1,3 @@
-import "./DropDown.css";
 import { useState, useEffect } from "react";
 
 const DropDown = ({ name, label, speciesChoosen, options, optionValue }) => {
