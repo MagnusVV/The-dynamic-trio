@@ -32,7 +32,10 @@ const ButtonStyled = styled.button`
     /* border: 2px solid #2ff923; */
   }
   &:active {
-    box-shadow: #2ff924 0px 10px 55px, #2ff924 0px -12px 30px;
+    box-shadow: ${(props) =>
+      props.create
+        ? "#2ff924 0px 10px 55px, #2ff924 0px -12px 30px"
+        : "#EB212E 0px 10px 55px, #EB212E 0px -12px 30px"};
     transform: translateY(4px);
   }
 `;
