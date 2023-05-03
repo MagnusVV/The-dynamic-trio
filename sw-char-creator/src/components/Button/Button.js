@@ -2,15 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonStyled = styled.button`
-  background-color: #276460;
+  background-color: rgb(0, 0, 0);
   color: white;
-  border-radius: 8px;
+  border-radius: 0.5rem;
+  border-color: rgb(50, 50, 50);
   cursor: pointer;
   font-size: 14px;
   height: 40px;
   padding: 10px 16px;
   text-align: center;
   position: relative;
+  margin-top: 6rem;
   &:after {
     content: "";
     position: absolute;

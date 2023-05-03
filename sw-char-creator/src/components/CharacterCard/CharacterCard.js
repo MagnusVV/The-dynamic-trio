@@ -3,6 +3,7 @@ import styled from "styled-components";
 const CharacterCardStyled = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: 1rem;
   height: 28rem;
   min-width: 18.75rem;

@@ -4,7 +4,6 @@ const CreateCard = styled.div`
   padding: 1rem;
   min-height: 20rem;
   width: 100%;
-  background-color: rgb(0, 0, 0);
   color: yellow;
   display: flex;
   flex-direction: column;

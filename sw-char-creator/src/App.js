@@ -144,8 +144,8 @@ function App() {
               color: "yellow",
               fontSize: "100px",
               textAlign: "center",
-              webkitTextFillColor: "black",
-              webkitTextStroke: "1px yellow",
+              WebkitTextFillColor: "black",
+              WebkitTextStroke: "1px yellow",
             }}
           >
             Star Wars Character Generator
