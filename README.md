@@ -3,7 +3,7 @@
 ## Authors
 
 [Magnus Vargvinter](https://github.com/MagnusVV) & <br/>
-[https://github.com/Robinpn](https://github.com/MagnusVV)
+[Robin Persson](https://github.com/Robinpn)
 
 Summary:
 A cute little web application that fetches all species- and vehicle-objects from SWAPI. Using these, you can create character cards for either jedi or sith characters.
