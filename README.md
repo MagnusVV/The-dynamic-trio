@@ -2,7 +2,7 @@
 
 ## Authors
 
-[Magnus Vargvinter](https://github.com/MagnusVV)
+[Magnus Vargvinter](https://github.com/MagnusVV) & <br/>
 [https://github.com/Robinpn](https://github.com/MagnusVV)
 
 Summary:
