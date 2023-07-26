@@ -1,5 +1,8 @@
 # The-dynamic-trio
 
+## About
+This project is the final task in the React.js course. I found React to be pretty hard. I get it better now, but it still feels a bit hard to grasp. Fun to make this app, though, and super fun to tap SWAPI for information!
+
 ## Authors
 
 [Magnus Vargvinter](https://github.com/MagnusVV) & <br/>
